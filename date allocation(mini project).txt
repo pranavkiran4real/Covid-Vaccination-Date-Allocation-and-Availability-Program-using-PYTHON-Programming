@@ -1,0 +1,44 @@
+
+def inj_date(name,phno):
+dd=int(input("enter the day of the first injection :"))
+mm=int(input("enter the month"))
+yyyy=int(input("enter the year"))
+
+print("Your 1st injection date:%d-%d-%d"%(dd,mm,yyyy))
+if(dd>15 and mm==4 or mm==6 or mm==9 or mm==11):
+    dd=dd-15
+    mm=mm+1
+    print("Your 2nd injection date is %d-%d-%d"%(dd,mm,yyyy))
+elif(dd<=15 and mm==4 or mm==6 or mm==9 or mm==11):
+    dd=dd+15
+    print("Your 2nd injection date is %d-%d-%d"%(dd,mm,yyyy))
+
+elif(dd>16 and mm==1 or mm==3 or mm==5 or mm==7 or mm==8 or mm==10):
+    dd=dd-16
+    mm=mm+1
+    print("Your 2nd injection date is %d-%d-%d"%(dd,mm,yyyy))
+elif(dd<=16 and mm==1 or mm==3 or mm==5 or mm==7 or mm==8 or mm==10):
+    dd=dd+15
+    print("Your 2nd injection date is %d-%d-%d"%(dd,mm,yyyy))
+elif(mm==12 and dd<=16):
+    dd=dd+15
+    print("Your 2nd injection date is %d-%d-%d"%(dd,mm,yyyy))
+    
+elif(mm==12 and dd>16):
+    dd=dd-16
+    mm=1
+    yyyy+=1
+    print("Your 2nd injection date is %d-%d-%d"%(dd,mm,yyyy))
+elif(mm==2 and dd<=13):
+    dd=dd+15
+    print("Your 2nd injection date is %d-%d-%d"%(dd,mm,yyyy))
+elif(mm==2 and dd>13):
+    dd=dd-13
+    print("Your 2nd injection date is %d-%d-%d"%(dd,mm,yyyy))
+
+
+print("Mr/Mrs.{}, The 2nd injection date will be sent to your mobile no:{}".format(name,phno))
+
+
+    
+    
